@@ -10,10 +10,13 @@
   "repository": "ignored",
   "license": "ISC",
   "devDependencies": {
+    "@types/gulp": "^3.8.32",
+    "@types/jquery": "^2.0.39",
     "gulp": "^3.9.1",
-    "typescript": "^2.0.3"
+    "typescript": "^2.1.5"
   },
   "dependencies": {
-    "elegular": "^0.0.8"
+    "elegular": "^0.0.9",
+    "jquery": "^3.1.1"
   }
 }

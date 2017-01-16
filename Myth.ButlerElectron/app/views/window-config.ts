@@ -3,26 +3,14 @@ let windowConfig: ElegularWindowConfig[] = [{
     windowId: "main",
     angularModulePath: __dirname + "/main-window/main-window.module.js",
     isMainWindow: true,
-    isOpenDevTool: true,
+    isOpenDevTool: false,
     isUseSystemJS: true,
     windowOptions: {
-        width: 800,
-        height: 800,
-        frame: true,
-        alwaysOnTop: false
+        width: 100,
+        height: 100,
+        frame: false,
+        alwaysOnTop: true,
+        transparent:true
     }
 }];
-// let windowConfig: AngularWindowModuleConfig[] = [{
-//     modulePath: __dirname + "/main-window/main-window.module.js",
-//     isMainWindow: true,
-//     isOpenDevTool: false,
-//     windowOptions: {
-//         width: 120,
-//         height: 120,
-//         frame: false,
-//         transparent: true,
-//         skipTaskbar: true,
-//         alwaysOnTop:true
-//     }
-// }];
 export {windowConfig};
