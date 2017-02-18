@@ -3,11 +3,4 @@
          (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)" (mouseup)="onMouseUp()">
         <img src="note.png" style="visibility: hidden">
     </div>
-    <md-menu #appMenu="mdMenu">
-        <button md-menu-item (click)="onConfigurationClick()"> Settings </button>
-        <button md-menu-item> Help </button>
-        <button md-menu-item (click)="onExitClick()"> Exit </button>
-    </md-menu>
-
-    <button md-icon-button [mdMenuTriggerFor]="appMenu" style="visibility: hidden"></button>
 </div>
