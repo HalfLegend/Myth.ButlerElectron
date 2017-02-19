@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {ElegularWindowRef, ElegularService} from 'elegular/client';
+import * as electron from "electron";
+
 @Component({
     templateUrl: __dirname + "/main.window.html"
 })
@@ -9,9 +11,15 @@ export class MainWindow {
     private menu : Electron.Menu;
     constructor(private _elegularWindowRef: ElegularWindowRef, private _elegularService: ElegularService) {
         this.menu = new Menu();
-        this.menu.append(new MenuItem({label: 'MenuItem1', click() { console.log('item 1 clicked') }}));
+        this.menu.append(new MenuItem({
+            label: 'Settings',
+            click :this._onConfigurationClicked
+        }));
         this.menu.append(new MenuItem({type: 'separator'}));
-        this.menu.append(new MenuItem({label: 'MenuItem2', type: 'checkbox', checked: true}));
+        this.menu.append(new MenuItem({
+            label: 'Exit',
+            click :this._onExitClicked
+        }));
     }
 
     onMouseDown(mouseEvent: MouseEvent){
@@ -41,11 +49,11 @@ export class MainWindow {
         this.initialMouseOffset = null;
     }
 
-    onExitClick(){
+    _onExitClicked = () => {
         this._elegularWindowRef.close();
-    }
+    };
 
-    onConfigurationClick(){
+    _onConfigurationClicked = () =>{
         this._elegularService.createWindowAsync("configuration");
     }
 }

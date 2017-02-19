@@ -7,31 +7,28 @@ let globalElegularOptions:GlobalElegularOptions = {
 };
 
 let windowConfig: ElegularWindowOptions[] = [{
-    windowId: "main",
+    windowName: "main",
     angularModulePath: __dirname + "/main-window/main-window.module.js",
     isMainWindow: true,
-    isOpenDevTool: true,
+    isOpenDevTool: false,
+    isStoreWindowStatus:true,
     windowOptions: {
-        width: 800,
-        height: 800,
-        frame: true,
-        alwaysOnTop: false,
+        width: 150,
+        height: 150,
+        frame: false,
+        alwaysOnTop: true,
         transparent:true
     }
 },{
-    windowId: "configuration",
+    windowName: "configuration",
     angularModulePath: __dirname + "/configuration-window/configuration-window.module.js",
     isMainWindow: false,
     isOpenDevTool: true,
-    systemJsConfig:{
-        map:{'@angular/material': 'npm:@angular/material/bundles/material.umd.js'}
-    },
     windowOptions: {
         width: 800,
         height: 800,
         frame: true,
-        alwaysOnTop: true,
-        transparent:true
+        title:"Settings"
     }
 }];
 export {windowConfig, globalElegularOptions};

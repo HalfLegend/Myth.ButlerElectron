@@ -5,7 +5,7 @@ import 'hammerjs/hammer.js';
 import {MainWindow} from "./main.window";
 
 @NgModule({
-    imports: [BrowserModule, MaterialModule.forRoot()],
+    imports: [BrowserModule, MaterialModule],
     declarations: [MainWindow],
     bootstrap: [MainWindow]
 })
